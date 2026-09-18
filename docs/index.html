@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OweGo</title>
+  <style>
+    :root {
+      --teal: #1b6b6a;
+      --coral: #e8744f;
+      --cream: #f7f5f2;
+      --text: #1f2429;
+      --muted: #737880;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      background: linear-gradient(165deg, var(--cream) 0%, #ebe8e2 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main {
+      max-width: 36rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .mark {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 0.85rem;
+      background: var(--teal);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+      color: var(--teal);
+    }
+    .tagline {
+      margin: 0 0 1.75rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    p { margin: 0 0 1rem; }
+    a {
+      color: var(--teal);
+      font-weight: 600;
+    }
+    a:hover { color: var(--coral); }
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.25rem 1.35rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      margin-top: 1.5rem;
+    }
+    .card h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    li { margin: 0.4rem 0; }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-hidden="true">OG</div>
+    <h1>OweGo</h1>
+    <p class="tagline">Split trip expenses. Settle up easily.</p>
+    <p>
+      OweGo is a local-first iOS app for tracking shared trip spending with friends.
+      No account required for this version — your data stays on your device.
+    </p>
+    <div class="card">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="https://github.com/djain2405/OweGo">Source on GitHub</a></li>
+      </ul>
+    </div>
+    <footer>
+      Support: open an issue on
+      <a href="https://github.com/djain2405/OweGo/issues">GitHub Issues</a>.
+    </footer>
+  </main>
+</body>
+</html>

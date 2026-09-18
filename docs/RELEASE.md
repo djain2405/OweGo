@@ -7,8 +7,8 @@ Ship a TestFlight / App Store build of the local-first OweGo app.
 - [ ] Set a real Venmo username in Settings only for your own dogfood; reviewers can leave it blank  
 - [ ] Confirm **Version** (`MARKETING_VERSION`) and **Build** (`CURRENT_PROJECT_VERSION`) in Xcode  
 - [ ] Confirm App Icon appears on Simulator/device home screen  
-- [ ] Host [`PRIVACY_POLICY.md`](PRIVACY_POLICY.md) at a **public HTTPS URL** (GitHub Pages, Notion public page, your site, etc.)  
-- [ ] Prepare Support URL (email page or Issues)  
+- [ ] Enable GitHub Pages: repo **Settings → Pages → Deploy from branch `main` / folder `/docs`**  
+- [ ] Confirm URLs load: Support `https://djain2405.github.io/OweGo/` · Privacy `https://djain2405.github.io/OweGo/privacy.html`  
 - [ ] Paste listing copy from [`APP_STORE_LISTING.md`](APP_STORE_LISTING.md) into App Store Connect  
 
 ## App Store Connect
