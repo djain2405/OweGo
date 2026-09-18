@@ -56,6 +56,19 @@ final class BalanceEngineTests: XCTestCase {
         let splits = BalanceEngine.computeSplits(amount: 10, participants: [a, b, c], mode: .equal)
         XCTAssertEqual(splits.count, 3)
         XCTAssertEqual(splits.map(\.amount).reduce(0, +), 10)
+        // 10 / 3 → 3.33, 3.33, 3.34 (remainder to last)
+        XCTAssertEqual(splits[0].amount, Decimal(string: "3.33"))
+        XCTAssertEqual(splits[1].amount, Decimal(string: "3.33"))
+        XCTAssertEqual(splits[2].amount, Decimal(string: "3.34"))
+    }
+
+    func testEqualSplitPennyCaseWithTwoPeople() {
+        let a = Participant(name: "A")
+        let b = Participant(name: "B")
+        let splits = BalanceEngine.computeSplits(amount: Decimal(string: "0.03")!, participants: [a, b], mode: .equal)
+        XCTAssertEqual(splits.map(\.amount).reduce(0, +), Decimal(string: "0.03"))
+        XCTAssertEqual(splits[0].amount, Decimal(string: "0.01"))
+        XCTAssertEqual(splits[1].amount, Decimal(string: "0.02"))
     }
 
     func testCustomAmountSplit() {
@@ -81,6 +94,93 @@ final class BalanceEngineTests: XCTestCase {
         XCTAssertEqual(splits.map(\.amount).reduce(0, +), 100)
         XCTAssertEqual(splits.first { $0.participantId == a.id }?.amount, 75)
         XCTAssertEqual(splits.first { $0.participantId == b.id }?.amount, 25)
+    }
+
+    func testPercentageSplitRoundingPutsRemainderOnLast() {
+        let a = Participant(name: "A")
+        let b = Participant(name: "B")
+        let c = Participant(name: "C")
+        // 100 / 3 each ≈ 33.33% of total when using equal percentages
+        let splits = BalanceEngine.computeSplits(
+            amount: 100,
+            participants: [a, b, c],
+            mode: .percentages([a.id: 1, b.id: 1, c.id: 1])
+        )
+        XCTAssertEqual(splits.map(\.amount).reduce(0, +), 100)
+        let amounts = Dictionary(uniqueKeysWithValues: splits.map { ($0.participantId, $0.amount) })
+        // First two get rounded shares; last absorbs remainder so total is exact
+        XCTAssertEqual(amounts.values.reduce(0, +), 100)
+    }
+
+    func testTwoPersonEqualExpenseBalances() {
+        let you = Participant(name: "You", isCurrentUser: true)
+        let friend = Participant(name: "Friend")
+        let tripId = UUID()
+        let trip = Trip(
+            id: tripId,
+            name: "Dinner",
+            startDate: Date(),
+            endDate: Date(),
+            participants: [you, friend],
+            expenses: [makeEqualExpense(tripId: tripId, amount: 80, payer: you, participants: [you, friend])]
+        )
+        let ledger = BalanceEngine.computeLedger(for: trip)
+        XCTAssertEqual(ledger.first { $0.participantId == you.id }?.balance, 40)
+        XCTAssertEqual(ledger.first { $0.participantId == friend.id }?.balance, -40)
+
+        let debts = BalanceEngine.computeSimplifiedDebts(ledger: ledger)
+        XCTAssertEqual(debts.count, 1)
+        XCTAssertEqual(debts[0].fromParticipantId, friend.id)
+        XCTAssertEqual(debts[0].toParticipantId, you.id)
+        XCTAssertEqual(debts[0].amount, 40)
+    }
+
+    func testExcludeOnePersonFromSplit() {
+        let a = Participant(name: "A", isCurrentUser: true)
+        let b = Participant(name: "B")
+        let c = Participant(name: "C")
+        let tripId = UUID()
+        // A paid 90, only B and C split (A excluded) → each of B,C owes 45; A is owed 90
+        let splits = BalanceEngine.computeSplits(amount: 90, participants: [b, c], mode: .equal)
+        let expense = Expense(
+            tripId: tripId,
+            amount: 90,
+            paidByParticipantId: a.id,
+            splits: splits
+        )
+        let trip = Trip(
+            id: tripId,
+            name: "Taxi",
+            startDate: Date(),
+            endDate: Date(),
+            participants: [a, b, c],
+            expenses: [expense]
+        )
+        let ledger = BalanceEngine.computeLedger(for: trip)
+        XCTAssertEqual(ledger.first { $0.participantId == a.id }?.balance, 90)
+        XCTAssertEqual(ledger.first { $0.participantId == b.id }?.balance, -45)
+        XCTAssertEqual(ledger.first { $0.participantId == c.id }?.balance, -45)
+    }
+
+    func testPartialSettlementLeavesRemainder() {
+        let divya = Participant(name: "Divya", isCurrentUser: true)
+        let gabe = Participant(name: "Gabe")
+        let tripId = UUID()
+        let trip = Trip(
+            id: tripId,
+            name: "Partial",
+            startDate: Date(),
+            endDate: Date(),
+            participants: [divya, gabe],
+            expenses: [makeEqualExpense(tripId: tripId, amount: 100, payer: divya, participants: [divya, gabe])],
+            settlements: [Settlement(tripId: tripId, fromParticipantId: gabe.id, toParticipantId: divya.id, amount: 20)]
+        )
+        let ledger = BalanceEngine.computeLedger(for: trip)
+        XCTAssertEqual(ledger.first { $0.participantId == gabe.id }?.balance, -30)
+        XCTAssertEqual(ledger.first { $0.participantId == divya.id }?.balance, 30)
+        let debts = BalanceEngine.computeSimplifiedDebts(ledger: ledger)
+        XCTAssertEqual(debts.count, 1)
+        XCTAssertEqual(debts[0].amount, 30)
     }
 
     // MARK: - Settlements
