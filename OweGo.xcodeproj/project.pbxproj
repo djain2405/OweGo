@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03A35B34AFF745BDBD1354B9 /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0036AA568C6467BAA0BCC9F /* ExpenseDetailView.swift */; };
+		077B948D299B4D228D32C8C3 /* SplitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E68C22C4A41EFB4E1C894 /* SplitMode.swift */; };
+		263498C183644132A1E3D005 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CF28D4FF804E54858EAD3D /* Split.swift */; };
+		AAA000000000000000000001 /* TripFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA000000000000000000002 /* TripFormView.swift */; };
+		AAA000000000000000000003 /* OweGoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA000000000000000000004 /* OweGoTheme.swift */; };
+		AAA000000000000000000005 /* UpdateTripUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA000000000000000000006 /* UpdateTripUseCase.swift */; };
+		29317E633D3546D5A05DEE66 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D90BC6CC42E2AC8E9E8E /* SettingsView.swift */; };
+		2F5DE2DE27D04B2697A569BA /* TripEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667CDBB2355948C8B779A7F3 /* TripEntities.swift */; };
+		327DE2DC1EC54DF5A6B3CDC5 /* SettlementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE414C8A5DBF4AE492C4C790 /* SettlementView.swift */; };
+		37FB84738BD8475EA939B90F /* ExpenseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A40A8750945FABF924D22 /* ExpenseCategory.swift */; };
+		4500A57A299C44989018FB47 /* UpdateExpenseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B24925AF04287BEFDDBD2 /* UpdateExpenseUseCase.swift */; };
+		4C7BA067D9B247EBB0B6E733 /* LocalTripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AD960B983B4DAFB87A16F0 /* LocalTripRepository.swift */; };
+		57C038DBC5B34EA4AC8CA7B9 /* TripDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80811AD0C0104B5F84520D46 /* TripDashboardView.swift */; };
+		6BBF7F4F00EA476599DBEF2A /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D4FFEE82744C3954868A6 /* AppDependencies.swift */; };
+		6F87CB546CEC4BC4BDE7105C /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F816D169C434AA6D2B268 /* AppSettings.swift */; };
+		CCC000000000000000000001 /* TripReportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC000000000000000000002 /* TripReportBuilder.swift */; };
+		CCC000000000000000000003 /* TripSpreadsheetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC000000000000000000004 /* TripSpreadsheetExporter.swift */; };
+		CCC000000000000000000005 /* ShareTripReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC000000000000000000006 /* ShareTripReportView.swift */; };
+		CCC000000000000000000007 /* CurrentUserNameSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC000000000000000000008 /* CurrentUserNameSync.swift */; };
+		CCC000000000000000000009 /* TripStoryHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC00000000000000000000A /* TripStoryHelpers.swift */; };
+		8327F30DE18F4762A7A3E8B2 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9DC09E5AFE444C82269812 /* Participant.swift */; };
+		8892835B733B46B1A58BE8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 906978B46A5A4D6C8287D838 /* Assets.xcassets */; };
+		PRIV00000000000000000002 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = PRIV00000000000000000001 /* PrivacyInfo.xcprivacy */; };
+		8DABE94713C34CC596B381B2 /* RecordSettlementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E4107685B4128BAA6A487 /* RecordSettlementUseCase.swift */; };
+		90F1464B8E9E4CD2882B7909 /* Settlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08D6AA37CA4749BE12EB39 /* Settlement.swift */; };
+		94F535B6E7E048BA917E90C4 /* BalanceEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBAF23237EF412DB2AB4AC3 /* BalanceEngineTests.swift */; };
+		9D9C71DC3EA34185AF7CF5EC /* EntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A82C5F2AECB4E8F99916CC8 /* EntityMapper.swift */; };
+		A437F7675AD243038D145E40 /* CreateTripUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D301AAEDD4F248A94F7D7 /* CreateTripUseCase.swift */; };
+		A9FE5D0CEA5B4D7FA3D83D41 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F44F1CDAB40CDAAD8F52E /* Expense.swift */; };
+		B09CE3ADB8ED4615893829DE /* AddExpenseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E4055D5146ABADDA4797 /* AddExpenseUseCase.swift */; };
+		B83B961587494A1FA615F410 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26A5AA47E4EC8AFD99783 /* NotificationManager.swift */; };
+		C1ACF534989941B3A7619CB7 /* TripCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA914D6DD3D4433FA0596D93 /* TripCompletionView.swift */; };
+		D045E12E84194E9D9B8A1AFF /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FCFF22D3E445B6977CE68C /* AddExpenseView.swift */; };
+		D439462B2A7D4F8DBEB217C8 /* BalanceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D757CFA0B03499CBD5B4A59 /* BalanceModels.swift */; };
+		D4DA83DB03044BAE94260D75 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55809332894EF194B9C1CB /* TripRepository.swift */; };
+		DF780DA4D6DA4FFFA0D577A8 /* CommonComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4790D9270934F80B4B79626 /* CommonComponents.swift */; };
+		DFD0401F0A614879BAFA5945 /* OweGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C931F4F74A4270BE60FD78 /* OweGoApp.swift */; };
+		EC2A44144B334D28956E8157 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CE8A5D1FF54212A9097B44 /* Trip.swift */; };
+		EDF4E7B4E49440DA8174A7C5 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F867101EAFE4D6596E373DF /* TripListView.swift */; };
+		F35D40BBEF384A0B82A8B606 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477A42E276A49DEAFB2A78B /* CurrencyFormatter.swift */; };
+		F635FA5075E646D4BEF638A3 /* BalanceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED09D996CF942109F82194D /* BalanceEngine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0557D90BC6CC42E2AC8E9E8E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1B08D6AA37CA4749BE12EB39 /* Settlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settlement.swift; sourceTree = "<group>"; };
+		24AD960B983B4DAFB87A16F0 /* LocalTripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTripRepository.swift; sourceTree = "<group>"; };
+		253E4107685B4128BAA6A487 /* RecordSettlementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSettlementUseCase.swift; sourceTree = "<group>"; };
+		2E9D4FFEE82744C3954868A6 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		2ED09D996CF942109F82194D /* BalanceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEngine.swift; sourceTree = "<group>"; };
+		371F44F1CDAB40CDAAD8F52E /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		3A82C5F2AECB4E8F99916CC8 /* EntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityMapper.swift; sourceTree = "<group>"; };
+		5477A42E276A49DEAFB2A78B /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		59FCFF22D3E445B6977CE68C /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		5B15867253EC4C1BA085D7DC /* OweGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OweGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DBAF23237EF412DB2AB4AC3 /* BalanceEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEngineTests.swift; sourceTree = "<group>"; };
+		667CDBB2355948C8B779A7F3 /* TripEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripEntities.swift; sourceTree = "<group>"; };
+		6F867101EAFE4D6596E373DF /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
+		7F7F816D169C434AA6D2B268 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		CCC000000000000000000002 /* TripReportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripReportBuilder.swift; sourceTree = "<group>"; };
+		CCC000000000000000000004 /* TripSpreadsheetExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSpreadsheetExporter.swift; sourceTree = "<group>"; };
+		CCC000000000000000000006 /* ShareTripReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTripReportView.swift; sourceTree = "<group>"; };
+		CCC000000000000000000008 /* CurrentUserNameSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserNameSync.swift; sourceTree = "<group>"; };
+		CCC00000000000000000000A /* TripStoryHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStoryHelpers.swift; sourceTree = "<group>"; };
+		80811AD0C0104B5F84520D46 /* TripDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDashboardView.swift; sourceTree = "<group>"; };
+		82CE8A5D1FF54212A9097B44 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		AAA000000000000000000002 /* TripFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFormView.swift; sourceTree = "<group>"; };
+		AAA000000000000000000004 /* OweGoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OweGoTheme.swift; sourceTree = "<group>"; };
+		AAA000000000000000000006 /* UpdateTripUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTripUseCase.swift; sourceTree = "<group>"; };
+		87C931F4F74A4270BE60FD78 /* OweGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OweGoApp.swift; sourceTree = "<group>"; };
+		906978B46A5A4D6C8287D838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		PRIV00000000000000000001 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		9A4B24925AF04287BEFDDBD2 /* UpdateExpenseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateExpenseUseCase.swift; sourceTree = "<group>"; };
+		9B55809332894EF194B9C1CB /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
+		9D757CFA0B03499CBD5B4A59 /* BalanceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceModels.swift; sourceTree = "<group>"; };
+		9D9DC09E5AFE444C82269812 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		9E37149A036A42E0B02D9BFD /* OweGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OweGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0036AA568C6467BAA0BCC9F /* ExpenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailView.swift; sourceTree = "<group>"; };
+		A74D301AAEDD4F248A94F7D7 /* CreateTripUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripUseCase.swift; sourceTree = "<group>"; };
+		AD6A40A8750945FABF924D22 /* ExpenseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategory.swift; sourceTree = "<group>"; };
+		B3D26A5AA47E4EC8AFD99783 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		C4790D9270934F80B4B79626 /* CommonComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonComponents.swift; sourceTree = "<group>"; };
+		CE414C8A5DBF4AE492C4C790 /* SettlementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlementView.swift; sourceTree = "<group>"; };
+		DA914D6DD3D4433FA0596D93 /* TripCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCompletionView.swift; sourceTree = "<group>"; };
+		E971E4055D5146ABADDA4797 /* AddExpenseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseUseCase.swift; sourceTree = "<group>"; };
+		F07E68C22C4A41EFB4E1C894 /* SplitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMode.swift; sourceTree = "<group>"; };
+		F0CF28D4FF804E54858EAD3D /* Split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1583A2C4EA2D447D885CE607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF843BADBDCE4E608CD5932E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09F33DAEF502421CBC1347D8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E971E4055D5146ABADDA4797 /* AddExpenseUseCase.swift */,
+				A74D301AAEDD4F248A94F7D7 /* CreateTripUseCase.swift */,
+				253E4107685B4128BAA6A487 /* RecordSettlementUseCase.swift */,
+				9A4B24925AF04287BEFDDBD2 /* UpdateExpenseUseCase.swift */,
+				AAA000000000000000000006 /* UpdateTripUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		0AFA70C3407E48ECBCDA5C5D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				15099EF94C304DB38D212C48 /* Components */,
+				BB3092E84AE24658B73A6770 /* Features */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		15099EF94C304DB38D212C48 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C4790D9270934F80B4B79626 /* CommonComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2310F12070CE42DCBD56E5CF /* OweGoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DBAF23237EF412DB2AB4AC3 /* BalanceEngineTests.swift */,
+			);
+			path = OweGoTests;
+			sourceTree = "<group>";
+		};
+		233E47671FC344A2A32CFF6C /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				59FCFF22D3E445B6977CE68C /* AddExpenseView.swift */,
+			);
+			path = AddExpense;
+			sourceTree = "<group>";
+		};
+		28ED396DD09F483B816B899E /* OweGo */ = {
+			isa = PBXGroup;
+			children = (
+				3A989F23170048538B465DE3 /* App */,
+				CD83C8EC38F24D6C9566CE19 /* Domain */,
+				3E13C9B6E4664D3782375B81 /* Data */,
+				0AFA70C3407E48ECBCDA5C5D /* Presentation */,
+				94D44009463F4E888CC75983 /* Core */,
+				906978B46A5A4D6C8287D838 /* Assets.xcassets */,
+				PRIV00000000000000000001 /* PrivacyInfo.xcprivacy */,
+			);
+			path = OweGo;
+			sourceTree = "<group>";
+		};
+		2AFAE244630B45D4BAE04B20 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2ED09D996CF942109F82194D /* BalanceEngine.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3A989F23170048538B465DE3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2E9D4FFEE82744C3954868A6 /* AppDependencies.swift */,
+				87C931F4F74A4270BE60FD78 /* OweGoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3DE0C67A62CF4CD3AB5B0225 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				5477A42E276A49DEAFB2A78B /* CurrencyFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		3E13C9B6E4664D3782375B81 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6ED25295098D42748E9F46FC /* Repositories */,
+				E9DE7AE34D0A4284B3C1E832 /* SwiftData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		41F65E4157654D69B01BEF94 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9D757CFA0B03499CBD5B4A59 /* BalanceModels.swift */,
+				371F44F1CDAB40CDAAD8F52E /* Expense.swift */,
+				AD6A40A8750945FABF924D22 /* ExpenseCategory.swift */,
+				9D9DC09E5AFE444C82269812 /* Participant.swift */,
+				1B08D6AA37CA4749BE12EB39 /* Settlement.swift */,
+				F0CF28D4FF804E54858EAD3D /* Split.swift */,
+				F07E68C22C4A41EFB4E1C894 /* SplitMode.swift */,
+				82CE8A5D1FF54212A9097B44 /* Trip.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48CC5DD90066485D84C18302 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E37149A036A42E0B02D9BFD /* OweGo.app */,
+				5B15867253EC4C1BA085D7DC /* OweGoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B6C4F2169D74B958E0EADE5 /* TripList */ = {
+			isa = PBXGroup;
+			children = (
+				AAA000000000000000000002 /* TripFormView.swift */,
+				6F867101EAFE4D6596E373DF /* TripListView.swift */,
+			);
+			path = TripList;
+			sourceTree = "<group>";
+		};
+		6ED25295098D42748E9F46FC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				24AD960B983B4DAFB87A16F0 /* LocalTripRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		902D247551A94801A8ABF818 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0557D90BC6CC42E2AC8E9E8E /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		94D44009463F4E888CC75983 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7F7F816D169C434AA6D2B268 /* AppSettings.swift */,
+				CCC000000000000000000002 /* TripReportBuilder.swift */,
+				CCC000000000000000000004 /* TripSpreadsheetExporter.swift */,
+				CCC000000000000000000008 /* CurrentUserNameSync.swift */,
+				CCC00000000000000000000A /* TripStoryHelpers.swift */,
+				B3D26A5AA47E4EC8AFD99783 /* NotificationManager.swift */,
+				3DE0C67A62CF4CD3AB5B0225 /* Formatters */,
+				BBB000000000000000000001 /* Theme */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BBB000000000000000000001 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				AAA000000000000000000004 /* OweGoTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A24B71FFA3E9485C9C3D28D6 /* ExpenseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A0036AA568C6467BAA0BCC9F /* ExpenseDetailView.swift */,
+			);
+			path = ExpenseDetail;
+			sourceTree = "<group>";
+		};
+		A6190B22CFF945789C65AC43 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9B55809332894EF194B9C1CB /* TripRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B026E95E47AA4AEBABF5E194 /* TripDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				DA914D6DD3D4433FA0596D93 /* TripCompletionView.swift */,
+				80811AD0C0104B5F84520D46 /* TripDashboardView.swift */,
+				CCC000000000000000000006 /* ShareTripReportView.swift */,
+			);
+			path = TripDashboard;
+			sourceTree = "<group>";
+		};
+		BB3092E84AE24658B73A6770 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				233E47671FC344A2A32CFF6C /* AddExpense */,
+				A24B71FFA3E9485C9C3D28D6 /* ExpenseDetail */,
+				902D247551A94801A8ABF818 /* Settings */,
+				C8BC6C759E304333AFE60217 /* Settlement */,
+				B026E95E47AA4AEBABF5E194 /* TripDashboard */,
+				4B6C4F2169D74B958E0EADE5 /* TripList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		C3E8CE726941450A87B3C7C1 = {
+			isa = PBXGroup;
+			children = (
+				28ED396DD09F483B816B899E /* OweGo */,
+				2310F12070CE42DCBD56E5CF /* OweGoTests */,
+				48CC5DD90066485D84C18302 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C8BC6C759E304333AFE60217 /* Settlement */ = {
+			isa = PBXGroup;
+			children = (
+				CE414C8A5DBF4AE492C4C790 /* SettlementView.swift */,
+			);
+			path = Settlement;
+			sourceTree = "<group>";
+		};
+		CD83C8EC38F24D6C9566CE19 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				41F65E4157654D69B01BEF94 /* Models */,
+				A6190B22CFF945789C65AC43 /* Repositories */,
+				2AFAE244630B45D4BAE04B20 /* Services */,
+				09F33DAEF502421CBC1347D8 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E9DE7AE34D0A4284B3C1E832 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				3A82C5F2AECB4E8F99916CC8 /* EntityMapper.swift */,
+				667CDBB2355948C8B779A7F3 /* TripEntities.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AEA49F1B8F6473EB3CB6236 /* OweGoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B33333333333333333333333 /* Build configuration list for PBXNativeTarget "OweGoTests" */;
+			buildPhases = (
+				8A081784977C445298581010 /* Sources */,
+				1583A2C4EA2D447D885CE607 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OweGoTests;
+			productName = OweGoTests;
+			productReference = 5B15867253EC4C1BA085D7DC /* OweGoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EFA029D0B8C24DF9AE2E7527 /* OweGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B22222222222222222222222 /* Build configuration list for PBXNativeTarget "OweGo" */;
+			buildPhases = (
+				9CABD3A008CB4E7884F5B1E3 /* Sources */,
+				CF843BADBDCE4E608CD5932E /* Frameworks */,
+				C7EDAB297BAE49FD8D1647A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OweGo;
+			productName = OweGo;
+			productReference = 9E37149A036A42E0B02D9BFD /* OweGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		409B160BC70D4A8CAB4C9E83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					6AEA49F1B8F6473EB3CB6236 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = EFA029D0B8C24DF9AE2E7527;
+					};
+					EFA029D0B8C24DF9AE2E7527 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = B11111111111111111111111 /* Build configuration list for PBXProject "OweGo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3E8CE726941450A87B3C7C1;
+			productRefGroup = 48CC5DD90066485D84C18302 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFA029D0B8C24DF9AE2E7527 /* OweGo */,
+				6AEA49F1B8F6473EB3CB6236 /* OweGoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7EDAB297BAE49FD8D1647A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8892835B733B46B1A58BE8AC /* Assets.xcassets in Resources */,
+				PRIV00000000000000000002 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A081784977C445298581010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F535B6E7E048BA917E90C4 /* BalanceEngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CABD3A008CB4E7884F5B1E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BBF7F4F00EA476599DBEF2A /* AppDependencies.swift in Sources */,
+				DFD0401F0A614879BAFA5945 /* OweGoApp.swift in Sources */,
+				6F87CB546CEC4BC4BDE7105C /* AppSettings.swift in Sources */,
+				CCC000000000000000000001 /* TripReportBuilder.swift in Sources */,
+				CCC000000000000000000003 /* TripSpreadsheetExporter.swift in Sources */,
+				CCC000000000000000000005 /* ShareTripReportView.swift in Sources */,
+				CCC000000000000000000007 /* CurrentUserNameSync.swift in Sources */,
+				CCC000000000000000000009 /* TripStoryHelpers.swift in Sources */,
+				F35D40BBEF384A0B82A8B606 /* CurrencyFormatter.swift in Sources */,
+				B83B961587494A1FA615F410 /* NotificationManager.swift in Sources */,
+				4C7BA067D9B247EBB0B6E733 /* LocalTripRepository.swift in Sources */,
+				9D9C71DC3EA34185AF7CF5EC /* EntityMapper.swift in Sources */,
+				2F5DE2DE27D04B2697A569BA /* TripEntities.swift in Sources */,
+				D439462B2A7D4F8DBEB217C8 /* BalanceModels.swift in Sources */,
+				A9FE5D0CEA5B4D7FA3D83D41 /* Expense.swift in Sources */,
+				37FB84738BD8475EA939B90F /* ExpenseCategory.swift in Sources */,
+				8327F30DE18F4762A7A3E8B2 /* Participant.swift in Sources */,
+				90F1464B8E9E4CD2882B7909 /* Settlement.swift in Sources */,
+				263498C183644132A1E3D005 /* Split.swift in Sources */,
+				077B948D299B4D228D32C8C3 /* SplitMode.swift in Sources */,
+				EC2A44144B334D28956E8157 /* Trip.swift in Sources */,
+				D4DA83DB03044BAE94260D75 /* TripRepository.swift in Sources */,
+				F635FA5075E646D4BEF638A3 /* BalanceEngine.swift in Sources */,
+				B09CE3ADB8ED4615893829DE /* AddExpenseUseCase.swift in Sources */,
+				A437F7675AD243038D145E40 /* CreateTripUseCase.swift in Sources */,
+				8DABE94713C34CC596B381B2 /* RecordSettlementUseCase.swift in Sources */,
+				4500A57A299C44989018FB47 /* UpdateExpenseUseCase.swift in Sources */,
+				DF780DA4D6DA4FFFA0D577A8 /* CommonComponents.swift in Sources */,
+				D045E12E84194E9D9B8A1AFF /* AddExpenseView.swift in Sources */,
+				03A35B34AFF745BDBD1354B9 /* ExpenseDetailView.swift in Sources */,
+				29317E633D3546D5A05DEE66 /* SettingsView.swift in Sources */,
+				327DE2DC1EC54DF5A6B3CDC5 /* SettlementView.swift in Sources */,
+				C1ACF534989941B3A7619CB7 /* TripCompletionView.swift in Sources */,
+				57C038DBC5B34EA4AC8CA7B9 /* TripDashboardView.swift in Sources */,
+				AAA000000000000000000001 /* TripFormView.swift in Sources */,
+				AAA000000000000000000003 /* OweGoTheme.swift in Sources */,
+				AAA000000000000000000005 /* UpdateTripUseCase.swift in Sources */,
+				EDF4E7B4E49440DA8174A7C5 /* TripListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		10A8FD7B3C7F4226AE92C195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14521AAA71EE441FBD1A26F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owego.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OweGo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OweGo";
+			};
+			name = Debug;
+		};
+		267B75711FF94EBD8ED1C91F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VNMK5763A9;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OweGo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OweGo;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Attach receipt photos to expenses.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owego.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D9EB0E1C0B44187BB5EFC14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owego.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OweGo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OweGo";
+			};
+			name = Release;
+		};
+		A8674926C4B746F4BAA5EF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FACC4C7F20C644EE871B816D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VNMK5763A9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OweGo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OweGo;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Attach receipt photos to expenses.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owego.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B11111111111111111111111 /* Build configuration list for PBXProject "OweGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10A8FD7B3C7F4226AE92C195 /* Debug */,
+				A8674926C4B746F4BAA5EF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B22222222222222222222222 /* Build configuration list for PBXNativeTarget "OweGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				267B75711FF94EBD8ED1C91F /* Debug */,
+				FACC4C7F20C644EE871B816D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B33333333333333333333333 /* Build configuration list for PBXNativeTarget "OweGoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14521AAA71EE441FBD1A26F3 /* Debug */,
+				7D9EB0E1C0B44187BB5EFC14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 409B160BC70D4A8CAB4C9E83 /* Project object */;
+}
