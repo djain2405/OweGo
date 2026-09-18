@@ -48,7 +48,7 @@ trip,expenses,split,travel,venmo,settle,group,bill,owegogo,friends,receipt
 
 ## What’s New (1.0)
 
-First release of OweGoGo: track shared trip expenses, see who owes whom, settle up, and share trip reports. Less owing. More going.
+First release of OweGoGo: track shared trip expenses, see who owes whom, settle up, and share trip reports — with a goofy suitcase-on-the-go app icon. Less owing. More going.
 
 ## Support & marketing URLs
 
