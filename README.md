@@ -1,6 +1,8 @@
-# OweGo
+# OweGoGo
 
-Trip expense companion for iOS — track shared spending during group trips with ultra-fast expense entry, live balances, and settlements.
+*Less owing. More going.*
+
+Trip expense companion for iOS — track shared spending during group trips with ultra-fast expense entry, live balances, and settlements. Friendly, fast, zero-accounting-energy.
 
 ## Requirements
 

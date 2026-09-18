@@ -1,6 +1,6 @@
-# OweGo Release Checklist
+# OweGoGo Release Checklist
 
-Ship a TestFlight / App Store build of the local-first OweGo app.
+Ship a TestFlight / App Store build of the local-first OweGoGo app.
 
 ## Before you archive
 
@@ -13,7 +13,7 @@ Ship a TestFlight / App Store build of the local-first OweGo app.
 
 ## App Store Connect
 
-1. Create a new app: bundle ID `com.owego.app`, name **OweGo**  
+1. Create a new app: bundle ID `com.owego.app`, name **OweGoGo**  
 2. Fill subtitle, description, keywords, category **Travel**  
 3. Add Privacy Policy URL and Support URL  
 4. Complete **App Privacy** using the draft in the listing doc (Data Not Collected / no tracking for v1)  

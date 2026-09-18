@@ -30,8 +30,8 @@ struct TripListView: View {
                 Group {
                     if trips.isEmpty {
                         EmptyStateView(
-                            title: "Your next adventure starts here",
-                            message: "Create a trip to start tracking shared expenses with your group.",
+                            title: "Less owing. More going.",
+                            message: "Create a trip, add it, and move on — no spreadsheets required.",
                             systemImage: "suitcase.fill",
                             actionTitle: "Create Trip",
                             action: { showingCreateTrip = true },
@@ -94,7 +94,7 @@ struct TripListView: View {
                 }
             }
             .owegoScreenBackground()
-            .navigationTitle("OweGo")
+            .navigationTitle("OweGoGo")
             .toolbarColorScheme(.light, for: .navigationBar)
             .toolbarBackground(OweGoTheme.surface.opacity(0.92), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)

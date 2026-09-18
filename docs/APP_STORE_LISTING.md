@@ -1,13 +1,20 @@
-# OweGo App Store Listing Draft
+# OweGoGo App Store Listing Draft
 
 Use this copy in App Store Connect. Edit to match your voice before submit.
+
+## Brand
+
+**OweGoGo**  
+*Less owing. More going.*
+
+Voice: friendly, fast, zero-accounting-energy. Think “Add it and move on.” “Trip tab handled.” “Go make memories, not spreadsheets.”
 
 ## App information
 
 | Field | Value |
 |-------|--------|
-| Name | OweGo |
-| Subtitle (30 chars) | Split trip expenses easily |
+| Name | OweGoGo |
+| Subtitle (30 chars) | Less owing. More going. |
 | Bundle ID | `com.owego.app` |
 | Primary category | Travel |
 | Secondary category | Finance (optional) |
@@ -16,13 +23,13 @@ Use this copy in App Store Connect. Edit to match your voice before submit.
 
 ## Promotional text (optional, 170 chars)
 
-Track group trip spending in the moment—then settle up with clear balances and Venmo-ready pay links.
+Less owing. More going. Track group trip spending in the moment—then settle up with clear balances and Venmo-ready pay links.
 
 ## Description
 
-OweGo makes shared trip spending simple so nobody has to reconstruct the group chat after you get home.
+OweGoGo makes shared trip spending simple so nobody has to reconstruct the group chat after you get home.
 
-Create a trip, add friends, and log expenses as they happen. OweGo keeps balances clear, shows who owes whom, and helps you settle up—including optional Venmo pay and request links.
+Create a trip, add friends, and log expenses as they happen. Keep balances clear, see who owes whom, and settle up—including optional Venmo pay and request links. Add it and move on.
 
 **Highlights**
 • Create trips and add participants in seconds  
@@ -33,23 +40,23 @@ Create a trip, add friends, and log expenses as they happen. OweGo keeps balance
 • Share trip wrap-up reports with your group  
 
 **Local-first**  
-Your trips and expenses stay on your iPhone. No account required for this version. OweGo does not process payments—Venmo links open Venmo so you can pay or request there.
+Your trips and expenses stay on your iPhone. No account required for this version. OweGoGo does not process payments—Venmo links open Venmo so you can pay or request there.
 
 ## Keywords (100 chars max, comma-separated)
 
-trip,expenses,split,travel,venmo,settle,group,bill,balance,friends,receipt
+trip,expenses,split,travel,venmo,settle,group,bill,owegogo,friends,receipt
 
 ## What’s New (1.0)
 
-First release of OweGo: track shared trip expenses, see who owes whom, settle up, and share trip reports—with a fresh suitcase + split-coin app icon.
+First release of OweGoGo: track shared trip expenses, see who owes whom, settle up, and share trip reports. Less owing. More going.
 
 ## Support & marketing URLs
 
-| Field | Notes |
+| Field | Value |
 |-------|--------|
-| Support URL | Required — e.g. a simple contact page or GitHub Issues |
+| Support URL | https://djain2405.github.io/OweGo/ |
+| Privacy Policy URL | https://djain2405.github.io/OweGo/privacy.html |
 | Marketing URL | Optional |
-| Privacy Policy URL | Required — host `docs/PRIVACY_POLICY.md` over HTTPS |
 
 ## App Privacy questionnaire (draft answers)
 
@@ -58,8 +65,8 @@ First release of OweGo: track shared trip expenses, see who owes whom, settle up
 | Do you or third-party partners collect data? | **No** (data stays on device; no analytics SDKs) |
 | Tracking? | **No** |
 | Payment info collected by app? | **No** (Venmo is opened externally) |
-| Photos? | Used only on device if user attaches receipts — if ASC asks “collected,” choose **No** unless Apple’s definition forces “linked to user” for on-device only; prefer **Data Not Collected** for this local-first build |
-| Contact info (name / Venmo handle)? | Stored on device only → typically **Data Not Collected** from *your* servers; if ASC requires declaring on-device storage that never leaves the device, follow current ASC guidance and mark not linked / not used for tracking |
+| Photos? | Prefer **Data Not Collected** for this local-first build |
+| Contact info (name / Venmo handle)? | On-device only → typically **Data Not Collected** |
 
 Re-check Apple’s App Privacy definitions at submit time; they change periodically.
 

@@ -47,9 +47,9 @@ struct SettingsView: View {
                                 .frame(width: 44, height: 44)
                                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("OweGo")
+                                Text("OweGoGo")
                                     .font(.headline)
-                                Text("Split trip expenses, settle up easily")
+                                Text("Less owing. More going.")
                                     .font(.caption)
                                     .foregroundStyle(OweGoTheme.textSecondary)
                             }
