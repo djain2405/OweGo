@@ -34,15 +34,15 @@ struct ShareTripReportView: View {
                 Section {
                     ShareLink(
                         item: groupReportText,
-                        subject: Text("\(trip.name) — trip wrap-up"),
-                        message: Text("Trip wrap-up from OweGo")
+                        subject: Text("\(trip.name) trip wrap-up"),
+                        message: Text("Hey crew, trip wrap-up from OweGoGo")
                     ) {
                         Label("Share Group Report", systemImage: "person.3")
                     }
                 } header: {
                     Text("Group")
                 } footer: {
-                    Text("Highlights, settlements, and full expense overview for everyone.")
+                    Text("Settle-ups plus every expense and who paid, for the whole crew.")
                 }
 
                 Section {
@@ -54,10 +54,11 @@ struct ShareTripReportView: View {
                     }
 
                     if let memberReportText, let participant = selectedParticipant {
+                        let firstName = participant.displayName.split(separator: " ").first.map(String.init) ?? participant.displayName
                         ShareLink(
                             item: memberReportText,
-                            subject: Text("\(participant.name) — \(trip.name)"),
-                            message: Text("Personal trip summary from OweGo")
+                            subject: Text("\(participant.name) \(trip.name)"),
+                            message: Text("Hi \(firstName), your trip tab from OweGoGo")
                         ) {
                             Label("Share \(participant.name)’s Report", systemImage: "person.crop.circle")
                         }
@@ -65,7 +66,7 @@ struct ShareTripReportView: View {
                 } header: {
                     Text("Personalized")
                 } footer: {
-                    Text("Only their balance, settlements, and expenses.")
+                    Text("Just their balance, settle-ups, and the expenses they were on.")
                 }
 
                 Section {

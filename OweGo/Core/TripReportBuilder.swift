@@ -8,25 +8,42 @@ enum TripReportBuilder {
     ) -> String {
         var lines: [String] = []
 
-        lines.append("\(trip.name) is wrapped")
+        let crew = trip.participants.map(\.displayName)
+        let greeting: String = {
+            switch crew.count {
+            case 0:
+                return "Hey crew,"
+            case 1:
+                return "Hi \(crew[0]),"
+            case 2:
+                return "Hi \(crew[0]) and \(crew[1]),"
+            default:
+                let listed = crew.dropLast().joined(separator: ", ")
+                return "Hi \(listed), and \(crew.last!),"
+            }
+        }()
+
+        lines.append(greeting)
+        lines.append("")
+        lines.append("That’s a wrap on \(trip.name). Here’s the trip tab so nobody has to dig through the chat.")
         lines.append(DateFormatterHelper.tripDateRange(start: trip.startDate, end: trip.endDate))
 
         let participantCount = max(trip.participants.count, 1)
         let perPerson = summary.totalSpent / Decimal(participantCount)
         lines.append(
-            "\(CurrencyFormatter.string(from: summary.totalSpent)) spent · ~\(CurrencyFormatter.string(from: perPerson)) each · \(summary.expenseCount) expenses"
+            "\(CurrencyFormatter.string(from: summary.totalSpent)) total · ~\(CurrencyFormatter.string(from: perPerson)) each · \(summary.expenseCount) moments"
         )
         lines.append("")
 
         if summary.simplifiedDebts.isEmpty {
-            lines.append("Everyone is square. Nothing left to settle.")
+            lines.append("You’re all settled. Nothing left to chase. Go make more memories.")
             lines.append("")
         } else {
             let count = summary.simplifiedDebts.count
             lines.append(
                 count == 1
-                    ? "1 settlement left. Here’s who pays whom:"
-                    : "\(count) settlements left. Here’s who pays whom:"
+                    ? "One easy settle-up left:"
+                    : "A few easy settle-ups (\(count)):"
             )
             for (index, debt) in summary.simplifiedDebts.enumerated() {
                 lines.append(
@@ -39,17 +56,17 @@ enum TripReportBuilder {
         if let fronter = TripStoryHelpers.whoFrontedMost(summary: summary) {
             let name = resolvedLedgerName(fronter, trip: trip)
             lines.append(
-                "\(name) fronted the most (\(CurrencyFormatter.string(from: fronter.paid)))."
+                "Big props to \(name) for fronting the most (\(CurrencyFormatter.string(from: fronter.paid)))."
             )
             lines.append("")
         }
 
-        let why = TripStoryHelpers.topExpenses(on: trip, limit: 5)
-        if !why.isEmpty {
-            lines.append("Why it adds up")
-            for moment in why {
+        let expenses = TripStoryHelpers.allExpenses(on: trip)
+        if !expenses.isEmpty {
+            lines.append("Here’s what went on the trip tab:")
+            for moment in expenses {
                 lines.append(
-                    "• \(moment.title) — \(CurrencyFormatter.string(from: moment.amount)) (\(moment.payerName))"
+                    "• \(moment.title) - \(CurrencyFormatter.string(from: moment.amount)) (\(moment.payerName) paid)"
                 )
             }
             lines.append("")
@@ -62,6 +79,8 @@ enum TripReportBuilder {
             venmoHandle: venmoHandle
         )
 
+        lines.append("Less owing. More going.")
+
         return lines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
@@ -73,25 +92,29 @@ enum TripReportBuilder {
     ) -> String {
         var lines: [String] = []
         let name = participant.displayName
+        let firstName = name.split(separator: " ").first.map(String.init) ?? name
         let ledger = summary.ledgers.first(where: { $0.participantId == participant.id })
         let balance = ledger?.balance ?? 0
 
+        lines.append("Hi \(firstName),")
+        lines.append("")
+
         if balance > 0 {
-            lines.append("\(name) — you’re owed for \(trip.name)")
+            lines.append("Quick wrap-up for \(trip.name). You’re owed a little something.")
         } else if balance < 0 {
-            lines.append("\(name) — your \(trip.name) bill")
+            lines.append("Quick wrap-up for \(trip.name). Here’s your piece of the trip tab.")
         } else {
-            lines.append("\(name) — \(trip.name) (all settled)")
+            lines.append("Quick wrap-up for \(trip.name). You’re all settled.")
         }
         lines.append(DateFormatterHelper.tripDateRange(start: trip.startDate, end: trip.endDate))
         lines.append("")
 
         if balance > 0 {
-            lines.append("\(name) is owed \(CurrencyFormatter.string(from: balance)).")
+            lines.append("Nice one. You’re owed \(CurrencyFormatter.string(from: balance)).")
         } else if balance < 0 {
-            lines.append("\(name) owes \(CurrencyFormatter.string(from: -balance)) overall.")
+            lines.append("Your share comes to \(CurrencyFormatter.string(from: -balance)) when you get a chance.")
         } else {
-            lines.append("\(name) is all settled for this trip.")
+            lines.append("Nothing left to chase. Go make more memories.")
         }
         lines.append("")
 
@@ -99,27 +122,27 @@ enum TripReportBuilder {
             $0.fromParticipantId == participant.id || $0.toParticipantId == participant.id
         }
         if !myDebts.isEmpty {
-            lines.append("Settlements")
+            lines.append(myDebts.count == 1 ? "Your settle-up:" : "Your settle-ups:")
             for debt in myDebts {
                 if debt.fromParticipantId == participant.id {
                     lines.append(
-                        "• \(name) → \(debt.toName)  \(CurrencyFormatter.string(from: debt.amount))"
+                        "• You → \(debt.toName)  \(CurrencyFormatter.string(from: debt.amount))"
                     )
                 } else {
                     lines.append(
-                        "• \(debt.fromName) → \(name)  \(CurrencyFormatter.string(from: debt.amount))"
+                        "• \(debt.fromName) → you  \(CurrencyFormatter.string(from: debt.amount))"
                     )
                 }
             }
             lines.append("")
         }
 
-        let why = TripStoryHelpers.topExpenses(involving: participant.id, on: trip, limit: 8)
-        if !why.isEmpty {
-            lines.append("Here’s why")
-            for moment in why {
+        let moments = TripStoryHelpers.expenses(involving: participant.id, on: trip)
+        if !moments.isEmpty {
+            lines.append("What you were on:")
+            for moment in moments {
                 lines.append(
-                    "• \(moment.title) — \(name)’s share \(CurrencyFormatter.string(from: moment.relevantAmount)) (of \(CurrencyFormatter.string(from: moment.amount)), \(moment.payerName) paid)"
+                    "• \(moment.title) - your share \(CurrencyFormatter.string(from: moment.relevantAmount)) (of \(CurrencyFormatter.string(from: moment.amount)), \(moment.payerName) paid)"
                 )
             }
             lines.append("")
@@ -135,9 +158,11 @@ enum TripReportBuilder {
                 debts: owingOrganizer,
                 tripName: trip.name,
                 venmoHandle: venmoHandle,
-                intro: "Tap to pay on Venmo"
+                intro: "Pay in a tap on Venmo when you’re ready:"
             )
         }
+
+        lines.append("Less owing. More going.")
 
         return lines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
     }
@@ -165,7 +190,7 @@ enum TripReportBuilder {
             debts: owedToOrganizer,
             tripName: trip.name,
             venmoHandle: venmoHandle,
-            intro: "Tap to pay on Venmo"
+            intro: "Pay in a tap on Venmo:"
         )
     }
 

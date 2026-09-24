@@ -25,9 +25,13 @@ enum TripStoryHelpers {
 
     /// Top expenses by total amount (for group “why”).
     static func topExpenses(on trip: Trip, limit: Int) -> [ExpenseMoment] {
+        Array(allExpenses(on: trip).prefix(limit))
+    }
+
+    /// Every expense on the trip, largest first (for full group reports).
+    static func allExpenses(on trip: Trip) -> [ExpenseMoment] {
         trip.expenses
             .sorted { $0.amount > $1.amount }
-            .prefix(limit)
             .map { moment(for: $0, in: trip, relevantAmount: $0.amount) }
     }
 
@@ -37,6 +41,11 @@ enum TripStoryHelpers {
         on trip: Trip,
         limit: Int
     ) -> [ExpenseMoment] {
+        Array(expenses(involving: participantId, on: trip).prefix(limit))
+    }
+
+    /// All expenses involving a participant, ranked by their share.
+    static func expenses(involving participantId: UUID, on trip: Trip) -> [ExpenseMoment] {
         trip.expenses
             .compactMap { expense -> ExpenseMoment? in
                 guard expense.involves(participantId) else { return nil }
@@ -45,8 +54,6 @@ enum TripStoryHelpers {
                 return moment(for: expense, in: trip, relevantAmount: share)
             }
             .sorted { $0.relevantAmount > $1.relevantAmount }
-            .prefix(limit)
-            .map { $0 }
     }
 
     /// Largest expense both people are on (for debt card subtitle).

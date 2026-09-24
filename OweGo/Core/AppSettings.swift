@@ -211,10 +211,11 @@ enum PaymentRequestBuilder {
         tripName: String,
         venmoPayURL: URL? = nil
     ) -> String {
-        var text = "Hey \(debtorName), you owe \(creditorName) \(CurrencyFormatter.string(from: amount)) for \(tripName)."
+        var text = "Hi \(debtorName),\n\nQuick trip tab for \(tripName): \(CurrencyFormatter.string(from: amount)) to \(creditorName) whenever you’re free. No rush, just so it’s not floating in the group chat forever."
         if let venmoPayURL {
             text += "\n\nPay on Venmo:\n\(venmoPayURL.absoluteString)"
         }
+        text += "\n\nLess owing. More going."
         return text
     }
 }
